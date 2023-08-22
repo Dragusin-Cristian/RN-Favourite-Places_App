@@ -2,6 +2,7 @@ import { useState } from "react";
 import { View, Button, Alert, Image, Text, StyleSheet } from "react-native";
 import { launchCameraAsync, useCameraPermissions, PermissionStatus } from 'expo-image-picker'
 import { Colors } from "../../constants/colors";
+import OutlinedButton from "../ui/OutlinedButton";
 
 const ImagePicker = () => {
   const [cameraPermissionInformation, requestPermission] = useCameraPermissions()
@@ -50,7 +51,7 @@ const ImagePicker = () => {
       <View style={styles.imagePreview}>
         {imagePreview}
       </View>
-      <Button title={'Take image'} onPress={takeImageHandler} />
+      <OutlinedButton onPress={takeImageHandler} icon={'camera'}>Take image</OutlinedButton>
     </View>
   );
 };
