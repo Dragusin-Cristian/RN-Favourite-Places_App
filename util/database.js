@@ -30,7 +30,6 @@ export const insertPlace = (place) => {
         `INSERT INTO places (title, imageUri, address, lat, lng) VALUES (?, ?, ?, ?, ?)`,
         [place.title, place.imageUri, place.address, place.location.lat, place.location.lng],
         (_, result) => {
-          console.log(result)
           resolve(result)
         },
         (_, error) => { reject(error) }

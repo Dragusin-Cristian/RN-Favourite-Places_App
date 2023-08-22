@@ -1,12 +1,7 @@
 import { View, Image, Text, Pressable, StyleSheet } from "react-native";
 import { Colors } from "../../constants/colors";
-import { useEffect } from "react";
 
 const PlaceItem = ({ place, onSelect }) => {
-
-  useEffect(() => {
-    console.log(place);
-  }, [])
 
   return (
     <Pressable
