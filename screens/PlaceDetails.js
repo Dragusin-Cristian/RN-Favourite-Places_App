@@ -19,10 +19,13 @@ const PlaceDetails = ({ route, navigation }) => {
   }, [placeId])
 
   const showOnMapHandler = () => {
-
+    navigation.navigate('Map', {
+      initialLat: fetchedPlace.location.lat,
+      initialLng: fetchedPlace.location.lng,
+    })
   }
 
-  if(!fetchedPlace){
+  if (!fetchedPlace) {
     return (
       <View style={styles.fallback}>
         <Text>
@@ -34,7 +37,7 @@ const PlaceDetails = ({ route, navigation }) => {
 
   return (
     <ScrollView>
-      <Image style={styles.image} source={{uri: fetchedPlace.imageUri}} />
+      <Image style={styles.image} source={{ uri: fetchedPlace.imageUri }} />
       <View style={styles.locationContainer}>
         <View style={styles.addressContainer}>
           <Text style={styles.address}>{fetchedPlace.address}</Text>
